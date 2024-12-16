@@ -29,14 +29,14 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-        ]);
+        $task = new Task();
+        $task->title = $request->input('title');
+        $task->description = $request->input('description');
+        $task->long_description = $request->input('long_description');
+        $task->completed = $request->has('completed');
+        $task->save();
 
-        Task::create($request->all());
-
-        return redirect()->route('tasks.index')->with('success', 'Task created successfully.');
+    return redirect()->route('tasks.index')->with('success', 'Task created successfully');
     }
 
     /**

@@ -30,13 +30,13 @@
                     <label class="font-weight-bold">Completed:</label>
                     <p class="form-control-plaintext">{{ $task->completed ? 'Yes' : 'No' }}</p>
                 </div>
-                <a href="{{ route('tasks.index') }}" class="btn btn-primary">Back to Tasks</a>
+                <a href="{{ route('tasks.index') }}" class="btn btn-primary">Back to Task List</a>
             </div>
         </div>
     </div>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
