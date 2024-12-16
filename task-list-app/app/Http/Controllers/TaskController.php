@@ -60,14 +60,14 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-        ]);
-        $task->completed = $request->has('completed');
+        $task = Task::findOrFail($task->id);
+        $task->title = $request->input('title');
+        $task->description = $request->input('description');
+        $task->long_description = $request->input('long_description');
+        $task->completed = $request->has('completed'); // Cập nhật trạng thái completed
         $task->save();
-
-        return redirect()->route('tasks.index')->with('success', 'Task updated successfully.');
+    
+        return redirect()->route('tasks.index')->with('success', 'Task updated successfully');
     }
 
     /**
