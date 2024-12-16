@@ -64,8 +64,8 @@ class TaskController extends Controller
             'title' => 'required',
             'description' => 'required',
         ]);
-
-        $task->update($request->all());
+        $task->completed = $request->has('completed');
+        $task->save();
 
         return redirect()->route('tasks.index')->with('success', 'Task updated successfully.');
     }
