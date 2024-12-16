@@ -16,7 +16,7 @@ class TaskSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        foreach (range(1, 10) as $index) {
+        for($i = 0;$i<100;$i++) {
             Task::create([
                 'title' => $faker->sentence(),
                 'description' => $faker->paragraph(),
